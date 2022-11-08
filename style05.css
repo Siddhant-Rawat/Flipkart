@@ -1,0 +1,304 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+.row::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.col-1 {
+    width: 53%;
+    padding-top: 14px;
+}
+
+.col-2 {
+    width: 44%;
+}
+
+.logo {
+    width: 16%;
+}
+
+.search {
+    width: 80%;
+    margin-left: 3%;
+}
+
+.search input[type = "text"] {
+    width: 100%;
+    height: 33px;
+    padding: 0px 0px 0px 10px;
+}
+
+.search button {
+    display: none;
+}
+
+img {
+    width: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    width: 860px;
+    margin: 0px auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+#chat {
+    background-color: #2874F0;
+    position: fixed;
+    bottom: 0px;
+    right: 20px;
+    width: 15%;
+    text-align: center;
+    border-radius: 3px;
+    z-index: 1;
+}
+
+#chat a {
+    color: #fff;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+}
+
+#header {
+    background-color: #2874F0;
+    position: fixed;
+    width: 100%;
+
+    /* Fix from top and bottom */
+    top: 0px;
+    /* bottom: 50px; */
+
+    /* z-index can also be negative 
+    and it works only with position */
+    z-index: 1;
+}
+
+#header .logo span {
+    font-size: 12px;
+    margin-right: 5px;
+    color: #FEE401;
+}
+
+.col-2 > ul > li {
+    display: inline-block;
+    margin: 9px 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    position: relative;
+}
+
+.col-2 > ul > li > a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 12px 0px;
+}
+
+.col-2 > ul > li:first-child > span {
+    background-color: white;
+    color: #2874F0;
+    padding: 8px 15px;
+    border-radius: 1px;
+    display: block;
+    cursor: pointer;
+}
+
+.col-2 > ul > li:first-child {
+    width: 28%;
+    padding: 8px 0px;
+}
+
+.col-2 .dropdown {
+    position: absolute;
+    background-color: #fff;
+    text-align: left;
+    width: 200%;
+    left: -50%;
+    display: none;
+    top: 57px;
+}
+
+.col-2 .dropdown::before {
+    content: "";
+    border: 10px solid red;
+    position: absolute;
+    top: -20px;
+    left: 46%;
+    border-color: transparent transparent white;
+}
+
+.col-2 ul li:hover .dropdown {
+    display: block;
+}
+
+.col-2 .dropdown ul li a {
+    padding: 15px;
+    display: block;
+    color: black;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.col-2 .dropdown ul li a:hover {
+    background-color: #F9F9F9;
+}
+
+.col-2 .dropdown ul li a i {
+    color: #2874F0;
+    margin-right: 5px;
+}
+
+#main-nav {
+    margin: 75px 0px 10px;
+}
+
+#main-nav ul {
+    padding: 0px 0px 0px 36px;
+}
+
+#main-nav .container {
+    width: 1100px;
+}
+
+#main-nav ul li {
+    display: inline-block;
+    width: 8%;
+    text-align: center;
+    margin-right: 2%;
+}
+
+#main-nav ul li img {
+    width: 60%;
+}
+
+#main-nav ul li a {
+    padding: 30px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+}
+
+#banner {
+    /* position: relative;
+    top:60px */
+
+    width: 400%;
+    animation: carousel 12s infinite linear;
+}
+
+#banner .slide {
+    display: inline-block;
+    width: 25%;
+    margin: 0px -2px;
+}
+
+#banner .slide img {
+    width: 100%;
+    /* object-fit: contain; */
+    height: calc(100vh - 200px);
+}
+
+@keyframes carousel {
+    0%, 20% {
+        transform: translateX(0%);
+    }
+    25%, 45% {
+        transform: translateX(-25%);
+    }
+    50%, 70% {
+        transform: translateX(-50%);
+    }
+    75%, 95% {
+        transform: translateX(-75%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+#section_1, #section_2 {
+    padding: 50px 0px;
+}
+
+#section_1 h2, #section_2 h2 {
+    margin-bottom: 30px;
+}
+
+#section_2 .product img {
+    min-height: 227px;
+}
+
+.product {
+    display: inline-block;
+    width: 18%;
+    text-align: center;
+    border: 1px solid;
+
+    /* Bcoz, wishlist is absolute */
+    position: relative;
+}
+
+.product .p-img {
+    position: relative;
+}
+
+.product img {
+    width: 100%;
+    min-height: 160px;
+}
+
+.product .wishlist {
+/*It makes the element relative to the screen if it does not have a position: relative element in parent hierarchy.
+    The element leaves the area that it had occupied .
+    One, that is made absolute, it's parent can be made relative 
+    It adds a new layer that will come on top of header*/
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.product .add-to-cart {
+    position: absolute;
+    width: 100%;
+    top: 40%;
+    left: 0px;
+    display: none;
+}
+
+.product .add-to-cart button {
+    border: 1px solid #2874F0;
+    background-color: #2874F0;
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+}
+
+.product:hover .add-to-cart {
+    display: block;
+}
